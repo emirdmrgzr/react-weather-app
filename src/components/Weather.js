@@ -12,13 +12,17 @@ import axios from "axios";
     const handleClick = async(e) =>{
       e.preventDefault();
       await getData();
-      await setShownCity(city);
+      await setShownCity(city.toLowerCase().split(" ").map((city) => city.charAt(0).toUpperCase() + city.slice(1)).join());
+      await setCity("");
     }
 
     const  getData = async() =>{
     await axios
     .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bbb20ad16f1fa337b2f3086d9f6e60a0`)
-    .then(response => setWeatherDeg(Math.round(response.data.main.temp-273) + " Degree"))
+    //.then(response => setWeatherDeg(Math.round(response.data.main.temp-273) + " Degree"))
+    .then((response) =>{
+      console.log(response.data);
+    })
     .catch(error => console.log(error))
     }
   return(
@@ -32,6 +36,7 @@ import axios from "axios";
           <div className="city-weather">
           <div className="el1">Current City : {shownCity}</div>
           <div className="el2">Current Weather  : {weatherDeg}</div>
+
           </div>
         </div>
     </div>
