@@ -81,6 +81,13 @@ body{
   border: 20px;
 }
 
+.displayed{
+  min-height: 160px;
+  padding: 10px;
+  background-color:rgba(255, 255, 255,0.1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 29px 5px;
+  border-radius: 20px;
+}
 
 /*
       THIS PART IS USABLE IF WE PUT BUTTON TO FORM

@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
  const Weather = ()=>{
-    
+    const [isClicked, setIsClicked] = useState(false);
     const [data,setData] = useState({});
     const [city,setCity] = useState("");
 
     const handleEnter = async(e)=>{
       if(e.key === "Enter"){
         e.preventDefault();
+        await setIsClicked(true);
         await getData();
         await setCity("");
       }
@@ -40,10 +41,10 @@ import axios from "axios";
             />
           </form>
           <div className="city-weather">
-            <div className="primaries">
+            <div className={`primaries ${isClicked ? "displayed" : ""}`}>
               <div className="location"><p>{data.name}</p></div>
               <div className="degree">{data.main ? <p>{Math.round(data.main.temp-273)}°C</p> : null}</div>
-              <div className="condition">{data.main ? <p>{data.weather[0].main}</p> : null}</div>
+              <div className="condition" >{data.main ? <p>{data.weather[0].main}</p> : null}</div>
             </div>
             <div className="others">
               <div className="humidity">
