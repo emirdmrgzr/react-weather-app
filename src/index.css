@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
 *{
   margin: 0;
   padding: 0;
 }
 body{
-  font-family: sans-serif;
-  background-image: url("./components/weatherbg.jpg");
+  font-family: 'Ubuntu', sans-serif;
+  background-image: url("./components/img/weatherbg3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,30 +20,70 @@ body{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   height: 100vh;
 }
+
 .wrapper{
   position: absolute;
-  top: 150px;
+  top: 125px;
 }
-h1{
-  position: relative;
-  bottom: 60px;
-  font-size: 2.4rem;
-  color:rgb(196, 222, 245);
-}
+
 .form input{
-  width:300px;
-  height: 40px;
+  width: 300px;
+  height: 50px;
   background-color: transparent;
-  color: white;
   border:none;
-  border-bottom: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 20px;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 29px 5px;
+}
+
+::placeholder{
+  color:rgba(255, 255, 255);
+  font-size: 1.5rem;
+}
+
+
+.city-weather {
+  position: relative;
+  top: 70px;
+  font-size: 2.3rem;
+}
+
+.city-weather .degree {
+  position: relative;
+  top:15px;
   
 }
+
+.city-weather .condition {
+  position: relative;
+  top:30px;
+  
+}
+
+
+.others{
+  padding: 10px;
+  background-color:rgba(255, 255, 255,0.1);
+  position: relative;
+  display: flex;
+  justify-content:space-around;
+  top: 180px;
+  gap: 50px;
+  font-size: 1.6rem;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 29px 5px;
+  border: 20px;
+}
+
+
+/*
+      THIS PART IS USABLE IF WE PUT BUTTON TO FORM
 .form button{
   margin-left: 10px;
   width: 90px;
@@ -53,14 +95,4 @@ h1{
 .form button:hover{
   background-color: rgb(214, 212, 212);
   cursor: pointer;
-}
-.city-weather{
-  position: relative;
-  top: 40px;
-  font-size: 1.4rem;
-}
-
-.city-weather .el2{
-  position: relative;
-  top:10px;
-}
+}*/
